@@ -80,29 +80,31 @@
 		}
 	},
 	"node": {
-		"package_json": "node/package.json",
-		"name": "pacter",
-		"bugs": null,
-		"config": null,
-		"engines": [
-			"node",
-			"iojs"
-		],
-		"dependencies": {
-			"command-line-args": "^4.0.7",
-			"command-line-commands": "^2.0.1",
-			"command-line-usage": "^4.0.1",
-			"directory-tree": "^2.0.0",
-			"log4js": "^2.3.3",
-			"request": "^2.81.0"
+		"npm": {
+			"package_json": "node/package.json",
+			"name": "pacter",
+			"bugs": null,
+			"config": null,
+			"engines": [
+				"node",
+				"iojs"
+			],
+			"dependencies": {
+				"command-line-args": "^4.0.7",
+				"command-line-commands": "^2.0.1",
+				"command-line-usage": "^4.0.1",
+				"directory-tree": "^2.0.0",
+				"log4js": "^2.3.3",
+				"request": "^2.81.0"
+			},
+			"devDependencies": {
+				"pkg": "^4.2.4"
+			},
+			"optionalDependencies": {
+				"browserify": "^14.4.0"
+			},
+			"bundledDependencies": []
 		},
-		"devDependencies": {
-			"pkg": "^4.2.4"
-		},
-		"optionalDependencies": {
-			"browserify": "^14.4.0"
-		},
-		"bundledDependencies": [],
 		"pkg": {
 			"scripts": [],
 			"assets": []
