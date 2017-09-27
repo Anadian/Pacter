@@ -105,7 +105,53 @@
 	<array>
 		<dict>
 			<key>Date</key>
-			<date>2017-09-12T22:17:37Z</date>
+			<date>2017-09-27T02:08:38Z</date>
+			<key>Location</key>
+			<dict>
+				<key>BookmarkData</key>
+				<data>
+				Ym9va8gDAAAAAAQQMAAAAAAAAAAAAAAAAAAAAAAAAAAA
+				AAAAAAAAAAAAAAAAAAAAuAIAAAUAAAABAQAAVXNlcnMA
+				AAAHAAAAAQEAAGNhbWVyb24AAwAAAAEBAABkZXYABAAA
+				AAEBAAB3d3cyDQAAAAEBAABtYXN0ZXIuanNvbmljAAAA
+				FAAAAAEGAAAEAAAAFAAAACQAAAAwAAAAPAAAAAgAAAAE
+				AwAAcqcTAAAAAAAIAAAABAMAAHSnEwAAAAAACAAAAAQD
+				AAApulUDAAAAAAgAAAAEAwAAjNjzAgAAAAAIAAAABAMA
+				ALtHYwMAAAAAFAAAAAEGAABwAAAAgAAAAJAAAACgAAAA
+				sAAAAAgAAAAABAAAQb9olH8AAAAYAAAAAQIAAAEAAAAA
+				AAAADwAAAAAAAAAAAAAAAAAAAAQAAAADAwAAAwAAAAQA
+				AAADAwAA9QEAAAgAAAABCQAAZmlsZTovLy8MAAAAAQEA
+				AE1hY2ludG9zaCBIRAgAAAAEAwAAAAB0BToAAAAIAAAA
+				AAQAAEG8Gr5RAAAAJAAAAAEBAAAwM0ExMUI0NS04Nzk1
+				LTNBRUMtOTAzNC1GODEwNzZEM0IzQzUYAAAAAQIAAIEA
+				AAABAAAA7xMAAAEAAAAAAAAAAAAAAAEAAAABAQAALwAA
+				AAAAAAABBQAAGgAAAAEBAABOU1VSTERvY3VtZW50SWRl
+				bnRpZmllcktleQAABAAAAAMDAADJAAAAtgAAAAECAAA0
+				NTE4MjY1ZWYzN2Q1YTQ0ZDIzYzU3ZGI5YTdiZjIxNDk5
+				YTZiMTYwOzAwMDAwMDAwOzAwMDAwMDAwOzAwMDAwMDAw
+				MDAwMDAwMjA7Y29tLmFwcGxlLmFwcC1zYW5kYm94LnJl
+				YWQtd3JpdGU7MDAwMDAwMDE7MDEwMDAwMDI7MDAwMDAw
+				MDAwMzYzNDdiYjsvdXNlcnMvY2FtZXJvbi9kZXYvd3d3
+				Mi9tYXN0ZXIuanNvbmljAAAA2AAAAP7///8BAAAAAAAA
+				ABEAAAAEEAAAVAAAAAAAAAAFEAAAwAAAAAAAAAAQEAAA
+				7AAAAAAAAABAEAAA3AAAAAAAAAACIAAAtAEAAAAAAAAF
+				IAAAJAEAAAAAAAAQIAAANAEAAAAAAAARIAAAaAEAAAAA
+				AAASIAAASAEAAAAAAAATIAAAWAEAAAAAAAAgIAAAlAEA
+				AAAAAAAwIAAAwAEAAAAAAAABwAAADAEAAAAAAAARwAAA
+				FAAAAAAAAAASwAAAGAEAAAAAAACA8AAA+AEAAAAAAADI
+				AQCA7AEAAAAAAAA=
+				</data>
+				<key>FileURL</key>
+				<string>file:///Users/cameron/dev/www2/master.jsonic</string>
+				<key>TypeID</key>
+				<string>_CFileLocator</string>
+				<key>Version</key>
+				<integer>1</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>Date</key>
+			<date>2017-09-27T02:08:38Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -151,7 +197,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2017-09-12T22:17:37Z</date>
+			<date>2017-09-27T02:08:38Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -198,7 +244,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2017-09-12T22:17:37Z</date>
+			<date>2017-09-27T02:08:38Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -252,6 +298,6 @@
 	<key>ViewSplitterPosition:cameron</key>
 	<real>0.24777007102966309</real>
 	<key>WindowFrame:cameron:displays([(0, 0), (1280, 800)])</key>
-	<string>rect(45,0,720,1009)</string>
+	<string>rect(45,316,720,1325)</string>
 </dict>
 </plist>
