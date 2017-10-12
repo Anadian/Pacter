@@ -25,6 +25,7 @@
 	"main": "source/main.js",
 	"meta": {
 		"readme": "README.md",
+		"notice": "NOTICE",
 		"makefile": "Makefile",
 		"changes": "CHANGES",
 		"gitignore": ".gitignore",
@@ -37,11 +38,15 @@
 	"files": [
 	],
 	"scripts": {
-		"configure": "configure",
+		"expand": "make expand",
+		"prepare": "make prepare",
+		"configure": "make configure",
 		"build": "make build",
 		"install": "make install",
 		"test": "make test",
-		"prepare": "prepare"
+		"publish": "make publish",
+		"misc": [
+		]
 	},
 	"repository": {
 		"type": "git",
@@ -73,6 +78,19 @@
 		"optionalDependencies": [
 			"pcre2"
 		],
+		"pkg-config": {
+			"file": "pkg-config/libpacter.pc"
+			"Name": null,
+			"Description": null,
+			"URL": null,
+			"Version": null,
+			"Requires": null,
+			"Requires_private": null,
+			"Conflicts": null,
+			"Cflags": null,
+			"Libs": null,
+			"Libs_private": null,
+		}
 		"clib": {
 			"package_json": null,
 			"src": [],
@@ -90,14 +108,22 @@
 				"iojs"
 			],
 			"dependencies": {
-				"command-line-args": "^4.0.7",
-				"command-line-commands": "^2.0.1",
-				"command-line-usage": "^4.0.1",
+				"express": "*",
+				"express-session": "*",
+				"handlebars": "*",
+				"pouchdb": "*",
+				"command-line-args": "*",
+				"command-line-commands": "*",
+				"command-line-usage": "*",
+				"grant": "*",
+				"grant-express": "*",
+				"inquirer": "*",
+				"chalk": "*"
 				"directory-tree": "^2.0.0",
-				"log4js": "^2.3.3",
 				"request": "^2.81.0"
 			},
 			"devDependencies": {
+				"pm2": "*",
 				"pkg": "^4.2.4"
 			},
 			"optionalDependencies": {
