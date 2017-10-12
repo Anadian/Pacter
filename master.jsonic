@@ -30,6 +30,7 @@
 		"changes": "CHANGES",
 		"gitignore": ".gitignore",
 		"bin": [],
+		"lib": [],
 		"man": [],
 		"travis": ".travis.yml",
 		"appveyor": "appveyor.yml",
@@ -79,7 +80,7 @@
 			"pcre2"
 		],
 		"pkg-config": {
-			"file": "pkg-config/libpacter.pc"
+			"file": "c/pkg-config/libpacter.pc"
 			"Name": null,
 			"Description": null,
 			"URL": null,
@@ -92,14 +93,22 @@
 			"Libs_private": null,
 		}
 		"clib": {
-			"package_json": null,
+			"package_json": "c/clib/package.json",
 			"src": [],
 			"repo": "github-name/git-repo"
 		}
 	},
+	"csharp": {
+		"nuget": {
+			"nuspec": "csharp/nuget/.nuget",
+			"packages_config": "csharp/nuget/packages.config",
+			"project_json": "csharp/nuget/project.json",
+			"nuget_confg": "csharp/nuget/NuGet.Config"
+		}
+	},
 	"node": {
 		"npm": {
-			"package_json": "node/package.json",
+			"package_json": "node/npm/package.json",
 			"name": "pacter",
 			"bugs": null,
 			"config": null,
