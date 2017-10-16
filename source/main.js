@@ -7,25 +7,26 @@
 MITlicensetm(Canosw,2017)
 */
 const FileSystem = require('fs');
-const CommandLineArgs = require('command-line-args');
 const CommandLineCommands = require('command-line-commands');
+const CommandLineArgs = require('command-line-args');
 const CommandLineUsage = require('command-line-usage');
 const DirectoryTree = require('directory-tree');
 const Request = require('request');
 
-const ValidCommands = [
-	null,
-	help,
-	update,
-	check,
-	learn,
-	teach,
-	absorb,
-	generate,
-	install,
-	uninstall,
-	list,
-	config
+const CommandDefinitions = [
+	null, //valid
+	'help', //valid
+	'update', //valid
+	'check', //valid
+	'parse', //valid
+	//learn, //placeholder
+	//teach, //placeholder
+	//absorb, //placeholder
+	'generate', //valid
+	//install, //placeholder
+	//uninstall, //placeholder
+	//list, //placeholder
+	'config' //valid
 ];
 const OptionDefinitions = [
 	{name: 'configfile', alias: 'C', type: String},
@@ -35,7 +36,7 @@ const OptionDefinitions = [
 	{name: 'fail', alias: 'F', type: Boolean, description: 'Stop at the first sign of something being wrong.'},
 	{name: 'force', alias: 'f', type: Boolean, description: 'Overwrite existing files if necessary.'},
 	{name: 'help', alias: 'h', type: Boolean, description: 'Display this help text.'},
-	{name: 'input', alias: 'I', type: String},
+	{name: 'input', alias: 'I', type: String, description: 'File to be used as master.jsonic would.'},
 	{name: 'log', alias: 'l', type: String, description: 'Log to the given file.'},
 	{name: 'noop', alias: 'n', type: Boolean, description: 'Describe what actions would be done (including files that would be changed) without actually doing (changing) them.'},
 	{name: 'pipe', alias: 'p', type: String, description: 'Pipe output to the given command.'},
@@ -50,3 +51,6 @@ const OptionDefinitions = [
 	{name: 'verbose', alias: 'v', type: Boolean, description: 'Verbose output.'},
 	{name: 'version', alias: 'V', type: Number, description: 'Display version number.'}
 ];
+const Command = CommandLineCommands(CommandDefinitions);
+const Options = CommandLineArgs(OptionDefinitions, Command);
+console.log(Command, Options);
