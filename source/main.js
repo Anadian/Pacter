@@ -4,7 +4,7 @@
 *	@brief
 *	@author Anadian
 *	@copyright MIT License
-MITlicensetm(Canosw,2017)
+MITlicensetm(2017,Canosw)
 */
 const FileSystem = require('fs');
 const CommandLineCommands = require('command-line-commands');
