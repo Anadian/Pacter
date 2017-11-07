@@ -10,7 +10,7 @@
 	"description": "Universal meta-data interpreter/generator/converter for modern code-sharing conventions.",
 	"keywords": "pacter universal meta data parser interpreter analyzer generator format converter package json manifest xml travis appveyor circle yaml yml toml makefile specification jsonic language system environment neutral agnostic modular portable extensible conventions code sharing management productivity manager standard abstraction open source libre free",
 	"organization": "Canosw",
-	"homepage": "https://citablesoftware.com/Pacter",
+	"homepage": "https://citablesoftware.com/software/Pacter",
 	"license": "(MIT OR Apache-2.0)",
 	"language": "javascript",
 	"author": {
@@ -53,58 +53,6 @@
 		"type": "git",
 		"name": "Anadian/Pacter",
 		"url": "https://github.com/Anadian/Pacter.git"
-	},
-	"c": {
-		"architectures": [
-			"x86_64"
-		],
-		"systems": [
-			"windows",
-			"macos",
-			"linux"
-		],
-		"compilers": [
-			"clang",
-			"gcc",
-			"msvc"
-		],
-		"dependencies": [
-			"sdl2",
-			"libarchive"
-		],
-		"devDependencies": [
-			"gnu_make",
-			"vim"
-		],
-		"optionalDependencies": [
-			"pcre2"
-		],
-		"pkg-config": {
-			"file": "c/pkg-config/libpacter.pc"
-			"Name": null,
-			"Description": null,
-			"URL": null,
-			"Version": null,
-			"Requires": null,
-			"Requires_private": null,
-			"Conflicts": null,
-			"Cflags": null,
-			"Libs": null,
-			"Libs_private": null,
-		}
-		"clib": {
-			"package_json": "c/clib/package.json",
-			"src": [],
-			"repo": "github-name/git-repo"
-		}
-	},
-	"csharp": {
-		"nuget": {
-			"nuspec": "csharp/nuget/.nuget",
-			"packages_config": "csharp/nuget/packages.config",
-			"project_json": "csharp/nuget/project.json",
-			"nuget_confg": "csharp/nuget/NuGet.Config"
-		}
 	},
 	"node": {
 		"npm": {
