@@ -20,12 +20,41 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTIO
 CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
+const Log = require('./log.js');
 const FileSystem = require('fs');
 const DirectoryTree = require('directory-tree');
 const Request = require('request');
+const StripJSONComments = require('strip-json-comments');
+const ParseJSON = require('parse-json');
 
+function Master_jsonic_Parser(filename){
+	var _return = [0,null];
+	if(filename != null){
+		var file_data = FileSystem.readFileSync(filename,'utf8');
+		if(file_data != null){
+			var json_data = StripJSONComments(file_data);
+			if(json_data != null){
+				var json_object = ParseJSON(json_data);
+				if(json_object != null){
+					_return = [1,json_object];
+				} else{
+					_return = [-104, 'A problem occurred while parsing JSON data.'];
+					Log.log(process.argv0,'Pacter','source/main.js','Master_jsonic_Parser','error',(_return[0].toString()+': '+_return[1]),json_data,json_object);
+			} else{
+				_return = [-103,'A problem occurred when replacing comments from the JSON data.'];
+				Log.log(process.argv0,'Pacter','source/main.js','Master_jsonic_Parser','error',(_return[0].toString()+': '+_return[1]),file_data,json_data);
+			}
+		} else{
+			_return = [-102,'A problem occurred while reading file.'];
+			Log.log(process.argv0,'Pacter','source/main.js','Master_jsonic_Parser','error',(_return[0].toString()+': '+_return[1]),filename,file_data);
+		}
+	} else{
+		_return = [-101,'Filename not specificied.'];
+		Log.log(process.argv0,'Pacter','source/main.js','Master_jsonic_Parser','error',(_return[0].toString()+': '+_return[1]),filename);
+	}
+	return _return;
+}
 if(require.main === module){
-	const Log = require('./log.js');
 	const CommandLineCommands = require('command-line-commands');
 	const CommandLineArgs = require('command-line-args');
 	const CommandLineUsage = require('command-line-usage');
@@ -63,14 +92,16 @@ if(require.main === module){
 		{name: 'source', alias: 'S', type: String, description: 'Source commands from the given file.'},
 		{name: 'stderr', alias: 'e', type: String, description: 'Redirect stderr to the given stream.'},
 		{name: 'stdin', alias: 'i', type: Boolean, description: 'Read input from stdin.'},
-		{name: 'stdout', alias: 'o', type: String, description: 'Redirect stdout to the given stream.'},
+		{name: 'stdout', alias: 'o', type: Boolean, description: 'Write to stdout instead of the given file.'},
+		{name: 'output', alias: 'O', type: String, description: 'Write output to the given file.'},
 		{name: 'verbose', alias: 'v', type: Boolean, description: 'Verbose output.'},
 		{name: 'version', alias: 'V', type: Number, description: 'Display version number.'}
 	];
 	const Command = CommandLineCommands(CommandDefinitions);
-	const Options = CommandLineArgs(OptionDefinitions, Command);
+	const Options = CommandLineArgs(OptionDefinitions, Command.argv);
 	var input_file = 'master.jsonic';
 	if(Options.input != null){
 		input_file = Options.input;
 	}
+	var parser_return = Master_jsonic_Parser(input_file);
 }

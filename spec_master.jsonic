@@ -34,7 +34,12 @@
 		"man": [],
 		"travis": ".travis.yml",
 		"appveyor": "appveyor.yml",
-		"circle": null
+		"circle": null,
+		"codecov": null,
+		"codeclimate": null,
+		"greenkeeper": null,
+		"daviddm": null,
+		"gitter": null
 	},
 	"files": [
 	],
@@ -129,7 +134,11 @@
 				"inquirer": "*",
 				"chalk": "*"
 				"directory-tree": "^2.0.0",
-				"request": "^2.81.0"
+				"request": "^2.81.0",
+				"strip-json-comments": "*".
+				"parse-json": "*",
+				"load-json-file": "*",
+				"write-json-file": "*"
 			},
 			"devDependencies": {
 				"pm2": "*",
