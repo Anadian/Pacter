@@ -40,6 +40,7 @@ function Master_jsonic_Parser(filename){
 				} else{
 					_return = [-104, 'A problem occurred while parsing JSON data.'];
 					Log.log(process.argv0,'Pacter','source/main.js','Master_jsonic_Parser','error',(_return[0].toString()+': '+_return[1]),json_data,json_object);
+				}
 			} else{
 				_return = [-103,'A problem occurred when replacing comments from the JSON data.'];
 				Log.log(process.argv0,'Pacter','source/main.js','Master_jsonic_Parser','error',(_return[0].toString()+': '+_return[1]),file_data,json_data);
@@ -63,14 +64,15 @@ if(require.main === module){
 		'help', //valid
 		'update', //valid
 		'check', //valid
-		'parse', //valid
+		//'parse', //valid
 		//learn, //placeholder
 		//teach, //placeholder
 		//absorb, //placeholder
-		'generate', //valid
+		//'generate', //valid
 		//install, //placeholder
 		//uninstall, //placeholder
 		//list, //placeholder
+		'generate-npm-package-json',
 		'config' //valid
 	];
 	const OptionDefinitions = [
@@ -103,5 +105,11 @@ if(require.main === module){
 	if(Options.input != null){
 		input_file = Options.input;
 	}
-	var parser_return = Master_jsonic_Parser(input_file);
+	var output_file = null;
+	if(Options.output != null){
+		
+	if(Command.command === 'generate-npm-package-json'){
+		var parser_return = Master_jsonic_Parser(input_file);
+		Log.log(process.argv0,'Pacter','source/main.js','Pacter','debug','parser_return: ',parser_return);
+	}
 }

@@ -75,7 +75,7 @@
 				"grant": "*",
 				"grant-express": "*",
 				"inquirer": "*",
-				"chalk": "*"
+				"chalk": "*",
 				"directory-tree": "^2.0.0",
 				"request": "^2.81.0"
 			},
@@ -126,7 +126,7 @@
 			"before_install": [],
 			"install": [],
 			"before_script": [],
-			"script": []
+			"script": [],
 			"after_success": [],
 			"after_failure": [],
 			"before_deploy": [],
