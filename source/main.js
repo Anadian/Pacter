@@ -27,7 +27,27 @@ const Request = require('request');
 const StripJSONComments = require('strip-json-comments');
 const ParseJSON = require('parse-json');
 
-function Master_jsonic_Parser(filename){
+var Parsers = new Map([
+	'pacter-master-jsonic', Pacter_Parser_pacter_master_jsonic,
+	'npm-package-json', Pacter_Parser_npm_package_json
+]);
+var Generators = new Map([
+	'npm-package-json', Pacter_Generator_npm_package_json
+	'pacter-master-jsonic', Pacter_Generator_pacter_master_jsonic
+]);
+
+function Pacter_Parser_Add(parser_key, parser_func);
+function Pacter_Parser_Remove(parser_key);
+function Pacter_Parser_List();
+function Pacter_Parser_Clear();
+
+function Pacter_Generator_Add(generator_key, generator_func);
+function Pacter_Generator_Remove(generator_key);
+function Pacter_Generator_List();
+function Pacter_Generator_Clear();
+
+function Pacter_Parser_pacter_master_jsonic(input_data){
+	Log.log(process.argv0,'Pacter','source/main.js','',)
 	var _return = [0,null];
 	if(filename != null){
 		var file_data = FileSystem.readFileSync(filename,'utf8');
@@ -56,10 +76,10 @@ function Master_jsonic_Parser(filename){
 	return _return;
 }
 if(require.main === module){
-	const CommandLineCommands = require('command-line-commands');
+	//const CommandLineCommands = require('command-line-commands');
 	const CommandLineArgs = require('command-line-args');
 	const CommandLineUsage = require('command-line-usage');
-	const CommandDefinitions = [
+	/*const CommandDefinitions = [
 		null, //valid
 		'help', //valid
 		'update', //valid
@@ -74,7 +94,7 @@ if(require.main === module){
 		//list, //placeholder
 		'generate-npm-package-json',
 		'config' //valid
-	];
+	];*/
 	const OptionDefinitions = [
 		{name: 'configfile', alias: 'C', type: String},
 		{name: 'configuration', alias: 'c', Boolean, description: 'Print configuration information and exit.'},
@@ -82,11 +102,12 @@ if(require.main === module){
 		{name: 'exit', alias: 'E', type: Boolean, description: 'Disable premature exiting such as after printing help text.'},
 		{name: 'fail', alias: 'F', type: Boolean, description: 'Stop at the first sign of something being wrong.'},
 		{name: 'force', alias: 'f', type: Boolean, description: 'Overwrite existing files if necessary.'},
+		{name: 'generator', alias: 'g', type: String, description: 'Specify generator.'},
 		{name: 'help', alias: 'h', type: Boolean, description: 'Display this help text.'},
 		{name: 'input', alias: 'I', type: String, description: 'File to be used as master.jsonic would.'},
 		{name: 'log', alias: 'l', type: String, description: 'Log to the given file.'},
 		{name: 'noop', alias: 'n', type: Boolean, description: 'Describe what actions would be done (including files that would be changed) without actually doing (changing) them.'},
-		{name: 'pipe', alias: 'p', type: String, description: 'Pipe output to the given command.'},
+		{name: 'parser', alias: 'p', type: String, description: 'Specify parser.'},
 		{name: 'prefix', alias: 'P', type: String},
 		{name: 'quiet', alias: 'q', type: Boolean, description: 'Only output errors.'},
 		{name: 'repl', alias: 'r', type: Boolean, description: 'Interactive REPL shell.'},
@@ -99,17 +120,24 @@ if(require.main === module){
 		{name: 'verbose', alias: 'v', type: Boolean, description: 'Verbose output.'},
 		{name: 'version', alias: 'V', type: Number, description: 'Display version number.'}
 	];
-	const Command = CommandLineCommands(CommandDefinitions);
-	const Options = CommandLineArgs(OptionDefinitions, Command.argv);
+	//const Command = CommandLineCommands(CommandDefinitions);
+	const Options = CommandLineArgs(OptionDefinitions);
 	var input_file = 'master.jsonic';
 	if(Options.input != null){
 		input_file = Options.input;
 	}
-	var output_file = null;
+	var output_file = 'packge.json';
 	if(Options.output != null){
-		
-	if(Command.command === 'generate-npm-package-json'){
-		var parser_return = Master_jsonic_Parser(input_file);
-		Log.log(process.argv0,'Pacter','source/main.js','Pacter','debug','parser_return: ',parser_return);
+		output_file = Options.output;
 	}
+	var parser_key = 'pacter-master-jsonic';
+	if(Options.parser != null){
+		parser_key = Options.parser;
+	}
+	var generator_key = 'npm-package-json';
+	if(Options.generator != null){
+		generator_key = Options.generator;
+	}
+	var parser_return = Master_jsonic_Parser(input_file);
+	Log.log(process.argv0,'Pacter','source/main.js','Pacter','debug','parser_return: ',parser_return);
 }
