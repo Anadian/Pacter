@@ -138,8 +138,6 @@
 				"request": "^2.81.0",
 				"strip-json-comments": "*".
 				"parse-json": "*",
-				"load-json-file": "*",
-				"write-json-file": "*"
 			},
 			"devDependencies": {
 				"pm2": "*",
