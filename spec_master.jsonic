@@ -138,6 +138,7 @@
 				"request": "^2.81.0",
 				"strip-json-comments": "*".
 				"parse-json": "*",
+				"nanoid": "*"
 			},
 			"devDependencies": {
 				"pm2": "*",
