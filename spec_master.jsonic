@@ -29,6 +29,7 @@
 		"makefile": "Makefile",
 		"changes": "CHANGES",
 		"gitignore": ".gitignore",
+		"license": "LICENSE",
 		"bin": [],
 		"lib": [],
 		"man": [],
@@ -133,7 +134,7 @@
 				"grant": "*",
 				"grant-express": "*",
 				"inquirer": "*",
-				"chalk": "*"
+				"chalk": "*",
 				"directory-tree": "^2.0.0",
 				"request": "^2.81.0",
 				"strip-json-comments": "*".
