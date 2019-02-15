@@ -26,7 +26,7 @@
 	"meta": {
 		"readme": "README.md",
 		"notice": "NOTICE",
-		"makefile": "Makefile",
+		"makefile": "scipts/makefile.mk",
 		"changes": "CHANGES",
 		"gitignore": ".gitignore",
 		"license": "LICENSE",
@@ -61,6 +61,38 @@
 		"name": "Anadian/Pacter",
 		"url": "https://github.com/Anadian/Pacter.git"
 	},
+	"build_phases": {
+		"prebuild": {
+			"prepare": null,
+			"git_pull": null,
+			"copy_dependencies": null,
+			"lint": null,
+			"directories": null
+		},
+		"build": {
+			"build": null,
+			"preprocess": null,
+			"compile": null,
+			"assemble": null,
+			"link": null,
+			"interpret: null
+		},
+		"test": {
+			"test": null,
+			"run": null,
+		},
+		"postbuild": {
+			"package": null,
+			"install": null,
+			"release": null,
+			"distribute": null,
+			"git_push": null
+		},
+		"cleanup": {
+			"cleanup": null,
+			"uninstall": null
+		}
+	},
 	"c": {
 		"architectures": [
 			"x86_64"
@@ -81,7 +113,7 @@
 		],
 		"devDependencies": [
 			"gnu_make",
-			"vim"
+			"nvim"
 		],
 		"optionalDependencies": [
 			"pcre2"
@@ -137,6 +169,7 @@
 				"chalk": "*",
 				"directory-tree": "^2.0.0",
 				"request": "^2.81.0",
+				"request-promise-native": "*",
 				"strip-json-comments": "*".
 				"parse-json": "*",
 				"nanoid": "*"
