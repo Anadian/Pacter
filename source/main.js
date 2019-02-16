@@ -1,31 +1,34 @@
 #!/usr/local/bin/node
+
 /**
-*	@file source/main.js
-*	@brief
-*	@author Anadian
-*	@copyright MIT License
-	Copyright 2017 Canosw
-	Permission is hereby granted, free of charge, to any person obtaining a copy of this 
-software and associated documentation files (the "Software"), to deal in the Software 
-without restriction, including without limitation the rights to use, copy, modify, 
-merge, publish, distribute, sublicense, and/or sell copies of the Software, and to 
-permit persons to whom the Software is furnished to do so, subject to the following 
-conditions:
-	The above copyright notice and this permission notice shall be included in all copies 
-or substantial portions of the Software.
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
-CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
-OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+* @file pacter.js
+* @brief The ultimate project metadata and build config tool.
+* @author Anadian
+* @copyright MITlicensetm(2019,Canosw)
 */
-const Log = require('./log.js');
-const FileSystem = require('fs');
-const DirectoryTree = require('directory-tree');
-const Request = require('request');
-const StripJSONComments = require('strip-json-comments');
-const ParseJSON = require('parse-json');
+
+//Dependencies
+	//Internal
+	const Log = require('./log.js');
+	//Standard
+	const FileSystem = require('fs');
+	//External
+	const DirectoryTree = require('directory-tree');
+	const Request = require('request');
+	const StripJSONComments = require('strip-json-comments');
+	const ParseJSON = require('parse-json');
+
+//Constants
+const FILENAME = 'pacter.js';
+const MODULE_NAME = 'Pacter';
+var PROCESS_NAME = '';
+if(require.main === module){
+	PROCESS_NAME = 'pacter';
+} else{
+	PROCESS_NAME = process.argv0;
+}
+
+//Functions
 
 var Parsers = new Map([
 	'pacter-master-jsonic', Pacter_Parser_pacter_master_jsonic,
@@ -75,6 +78,8 @@ function Pacter_Parser_pacter_master_jsonic(input_data){
 	}
 	return _return;
 }
+
+//Exports and Execution
 if(require.main === module){
 	//const CommandLineCommands = require('command-line-commands');
 	const CommandLineArgs = require('command-line-args');
@@ -138,6 +143,9 @@ if(require.main === module){
 	if(Options.generator != null){
 		generator_key = Options.generator;
 	}
-	var parser_return = Master_jsonic_Parser(input_file);
+	var parser_return = Pacter_Parser_pacter_master_jsonic(input_file);
 	Log.log(process.argv0,'Pacter','source/main.js','Pacter','debug','parser_return: ',parser_return);
+	
+} else{
+	
 }
