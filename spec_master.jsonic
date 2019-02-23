@@ -156,6 +156,8 @@
 				"iojs"
 			],
 			"dependencies": {
+				"env-path": "*",
+				"conf": "*",
 				"express": "*",
 				"express-session": "*",
 				"handlebars": "*",
