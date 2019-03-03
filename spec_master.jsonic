@@ -174,7 +174,8 @@
 				"request-promise-native": "*",
 				"strip-json-comments": "*".
 				"parse-json": "*",
-				"nanoid": "*"
+				"nanoid": "*",
+				"cytoscape": "*"
 			},
 			"devDependencies": {
 				"pm2": "*",
