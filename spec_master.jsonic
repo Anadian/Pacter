@@ -175,7 +175,8 @@
 				"strip-json-comments": "*".
 				"parse-json": "*",
 				"nanoid": "*",
-				"cytoscape": "*"
+				"cytoscape": "*",
+				"clipboardy": "*"
 			},
 			"devDependencies": {
 				"pm2": "*",
