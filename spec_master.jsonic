@@ -149,12 +149,75 @@
 		"npm": {
 			"package_json": "node/npm/package.json",
 			"name": "pacter",
-			"bugs": null,
-			"config": null,
-			"engines": [
-				"node",
-				"iojs"
+			"version": "",
+			"description": "",
+			"keywords": "",
+			"homepage": "",
+			"bugs": "",
+			"license": "",
+			"author": {
+				"name": "",
+				"email": "",
+				"url": ""
+			},
+			"contributiors": [
 			],
+			"files": [],
+			"main": "".
+			"browser": false,
+			"bin": {},
+			"man": "",
+			"directories": {
+				"lib": "",
+				"bin": "",
+				"man": "",
+				"doc": "",
+				"example": "",
+				"test": ""
+			},
+			"repository": {
+				"type": "",
+				"url": ""
+			},
+			"scripts": {
+				"prepublish": "",
+				"prepare": "",
+				"prepublishOnly": "",
+				"prepack": "",
+				"postpack": "",
+				"publish": "",
+				"postpublish": "",
+				"preinstall": "",
+				"install": "",
+				"postinstall": "",
+				"preuninstall": "",
+				"uninstall": "",
+				"postuninstall": "",
+				"preversion": "",
+				"version": "",
+				"postversion": "",
+				"pretest": "",
+				"test": "",
+				"posttest": "",
+				"prestop": "",
+				"stop": "",
+				"poststop": "",
+				"prestart": "",
+				"start": "",
+				"poststart": "",
+				"prerestart": "",
+				"restart": "",
+				"postrestart": "",
+				"preshrinkwrap": "",
+				"shrinkwrap": "",
+				"postshrinkwrap": ""
+			},
+			"config": {},
+			"engines": {
+				"node": null,
+				"iojs": null
+			},
+			"engineStrict": {},
 			"dependencies": {
 				"env-path": "*",
 				"conf": "*",
@@ -182,10 +245,15 @@
 				"pm2": "*",
 				"pkg": "^4.2.4"
 			},
+			"peerDependencies": {},
+			"bundledDependencies": {}.
 			"optionalDependencies": {
 				"browserify": "^14.4.0"
 			},
-			"bundledDependencies": []
+			"os": [],
+			"cpu": [],
+			"private": false,
+			"publishConfig": {}
 		},
 		"pkg": {
 			"scripts": [],
